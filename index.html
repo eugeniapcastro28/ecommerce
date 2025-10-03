@@ -256,11 +256,245 @@
         .indicator.active {
             background-color: white;
         }
+
+        /* Product Detail Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #f5f1eb;
+            border-radius: 8px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #4a4a4a;
+            cursor: pointer;
+            z-index: 10;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .modal-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-product-image {
+            width: 100%;
+            height: 400px;
+            background-color: #e8e4df;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            gap: 15px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background-color: #e8e4df;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail:hover {
+            border-color: #8b9e7d;
+        }
+
+        .modal-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .modal-product-name {
+            font-size: 32px;
+            font-weight: 600;
+            color: #4a4a4a;
+        }
+
+        .modal-product-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4a4a4a;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .quantity-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #4a4a4a;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        .quantity-btn:hover {
+            color: #8b9e7d;
+        }
+
+        .quantity-value {
+            min-width: 30px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .add-to-cart-btn {
+            background-color: #8b9e7d;
+            color: white;
+            padding: 14px 0;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #7a8a6d;
+        }
+
+        .product-details-section {
+            border-top: 1px solid #d0d0d0;
+            padding-top: 20px;
+        }
+
+        .details-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        .details-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .detail-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 15px;
+        }
+
+        .detail-label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            font-size: 13px;
+            color: #4a4a4a;
+        }
+
+        @media (max-width: 768px) {
+            .modal-body {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+
+            .main-product-image {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">SAMPLE & SAMPLE</div>
+        <div class="logo">ROOT & WEAVE</div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -283,8 +517,8 @@
             <div class="banner-slide slide3"></div>
         </div>
         <div class="banner-content">
-            <h1>Sample<br>Sample</h1>
-            <button class="shop-now-btn">Sample Now</button>
+            <h1>Crafted by Nature<br>Made for You</h1>
+            <button class="shop-now-btn">Shop Now</button>
         </div>
         <div class="banner-indicators">
             <div class="indicator active" data-slide="0"></div>
@@ -294,17 +528,16 @@
     </section>
 
     <section class="products-section">
-        <!-- Experience Our Craft -->
-        <h2 class="section-title">Experience Our Sample</h2> 
+        <h2 class="section-title">Experience Our Craft</h2> 
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-image">🪑</div>
                 <div class="product-info">
                     <div class="product-name">Monitor</div>
-                    <div class="product-category">Monitor</div>
+                    <div class="product-category">Display</div>
                     <div class="product-footer">
                         <div class="product-price">$280</div>
-                        <button class="view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal('monitor')">View Details</button>
                     </div>
                 </div>
             </div> 
@@ -313,10 +546,10 @@
                 <div class="product-image">🛏️</div>
                 <div class="product-info">
                     <div class="product-name">Keyboard</div>
-                    <div class="product-category">Keyboard</div>
+                    <div class="product-category">Input Device</div>
                     <div class="product-footer">
                         <div class="product-price">$1,800</div>
-                        <button class="view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal('keyboard')">View Details</button>
                     </div>
                 </div>
             </div>
@@ -325,18 +558,163 @@
                 <div class="product-image">🪵</div>
                 <div class="product-info">
                     <div class="product-name">Mouse</div>
-                    <div class="product-category">Mouse</div>
+                    <div class="product-category">Input Device</div>
                     <div class="product-footer">
                         <div class="product-price">$450</div>
-                        <button class="view-details-btn">View Details</button>
+                        <button class="view-details-btn" onclick="openModal('mouse')">View Details</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Product Detail Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="main-product-image" id="modalMainImage">🪑</div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail">🪑</div>
+                        <div class="thumbnail">🪑</div>
+                        <div class="thumbnail">🪑</div>
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2 class="modal-product-name" id="modalProductName">Monitor</h2>
+                    <div class="modal-product-price" id="modalProductPrice">$280</div>
+                    
+                    <div class="quantity-selector">
+                        <span class="quantity-label">Quantity</span>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">−</button>
+                            <span class="quantity-value" id="quantityValue">1</span>
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+
+                    <div class="product-details-section">
+                        <h3 class="details-title">Product Details</h3>
+                        <div class="details-grid">
+                            <div class="detail-row">
+                                <span class="detail-label">Material</span>
+                                <span class="detail-value" id="modalMaterial">Premium Quality Materials</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Dimensions</span>
+                                <span class="detail-value" id="modalDimensions">Standard Size</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Features</span>
+                                <span class="detail-value" id="modalFeatures">Ergonomic design, durable construction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Banner slideshow functionality  git push
+        // Product data
+        const products = {
+            monitor: {
+                name: 'Monitor',
+                category: 'Display',
+                price: '$280',
+                icon: '🪑',
+                material: 'High-quality LCD with LED backlight',
+                dimensions: '24" W × 14" H × 8" D',
+                features: 'Full HD resolution, adjustable stand, HDMI connectivity'
+            },
+            keyboard: {
+                name: 'Keyboard',
+                category: 'Input Device',
+                price: '$1,800',
+                icon: '🛏️',
+                material: 'Mechanical switches with premium keycaps',
+                dimensions: '18" W × 6" H × 1.5" D',
+                features: 'RGB backlighting, programmable keys, wireless connectivity'
+            },
+            mouse: {
+                name: 'Mouse',
+                category: 'Input Device',
+                price: '$450',
+                icon: '🪵',
+                material: 'Ergonomic design with soft-touch coating',
+                dimensions: '5" W × 3" H × 2" D',
+                features: 'Wireless, adjustable DPI, rechargeable battery'
+            }
+        };
+
+        let currentQuantity = 1;
+        let currentProduct = null;
+
+        // Open modal with product details
+        function openModal(productKey) {
+            const product = products[productKey];
+            currentProduct = productKey;
+            const modal = document.getElementById('productModal');
+            
+            document.getElementById('modalMainImage').textContent = product.icon;
+            document.getElementById('modalProductName').textContent = product.name;
+            document.getElementById('modalProductPrice').textContent = product.price;
+            document.getElementById('modalMaterial').textContent = product.material;
+            document.getElementById('modalDimensions').textContent = product.dimensions;
+            document.getElementById('modalFeatures').textContent = product.features;
+            
+            // Update thumbnails
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.textContent = product.icon;
+            });
+            
+            // Reset quantity
+            currentQuantity = 1;
+            document.getElementById('quantityValue').textContent = currentQuantity;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Quantity controls
+        function increaseQuantity() {
+            currentQuantity++;
+            document.getElementById('quantityValue').textContent = currentQuantity;
+        }
+
+        function decreaseQuantity() {
+            if (currentQuantity > 1) {
+                currentQuantity--;
+                document.getElementById('quantityValue').textContent = currentQuantity;
+            }
+        }
+
+        // Add to cart function
+        function addToCart() {
+            const product = products[currentProduct];
+            alert(`Added ${currentQuantity} × ${product.name} to cart!`);
+            closeModal();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Banner slideshow functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.banner-slide');
         const indicators = document.querySelectorAll('.indicator');
