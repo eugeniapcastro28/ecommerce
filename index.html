@@ -61,27 +61,10 @@
             cursor: pointer;
             font-size: 18px;
             transition: color 0.3s;
-            position: relative;
         }
 
         .header-icons span:hover {
             color: #8b9e7d;
-        }
-
-        .quotation-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: #8b9e7d;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 11px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
         }
 
         .banner {
@@ -274,6 +257,7 @@
             background-color: white;
         }
 
+        /* Product Detail Modal */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -444,7 +428,7 @@
             font-weight: 500;
         }
 
-        .add-to-quotation-btn {
+        .add-to-cart-btn {
             background-color: #8b9e7d;
             color: white;
             padding: 14px 0;
@@ -458,7 +442,7 @@
             letter-spacing: 1px;
         }
 
-        .add-to-quotation-btn:hover {
+        .add-to-cart-btn:hover {
             background-color: #7a8a6d;
         }
 
@@ -496,184 +480,6 @@
             color: #4a4a4a;
         }
 
-        /* Quotation List Styles */
-        .quotation-list {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
-        }
-
-        .quotation-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .quotation-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #4a4a4a;
-        }
-
-        .empty-quotation {
-            text-align: center;
-            padding: 60px 20px;
-            color: #999;
-        }
-
-        .empty-quotation-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-        }
-
-        .quotation-items {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .quotation-item {
-            display: grid;
-            grid-template-columns: 80px 1fr auto auto auto;
-            gap: 20px;
-            padding: 20px;
-            border-bottom: 1px solid #e8e4df;
-            align-items: center;
-        }
-
-        .quotation-item:last-child {
-            border-bottom: none;
-        }
-
-        .quotation-item-image {
-            width: 80px;
-            height: 80px;
-            background-color: #f0ede8;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
-
-        .quotation-item-details {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .quotation-item-name {
-            font-size: 18px;
-            font-weight: 600;
-            color: #4a4a4a;
-        }
-
-        .quotation-item-category {
-            font-size: 13px;
-            color: #999;
-        }
-
-        .quotation-item-quantity {
-            font-size: 16px;
-            color: #666;
-        }
-
-        .quotation-item-price {
-            font-size: 20px;
-            font-weight: 700;
-            color: #4a4a4a;
-        }
-
-        .remove-item-btn {
-            background: none;
-            border: none;
-            color: #d9534f;
-            font-size: 20px;
-            cursor: pointer;
-            padding: 8px;
-            transition: color 0.3s;
-        }
-
-        .remove-item-btn:hover {
-            color: #c9302c;
-        }
-
-        .quotation-summary {
-            margin-top: 30px;
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #e8e4df;
-        }
-
-        .summary-row:last-child {
-            border-bottom: none;
-            font-size: 20px;
-            font-weight: 700;
-            padding-top: 20px;
-        }
-
-        .summary-label {
-            color: #666;
-        }
-
-        .summary-value {
-            font-weight: 600;
-            color: #4a4a4a;
-        }
-
-        .quotation-actions {
-            margin-top: 30px;
-            display: flex;
-            gap: 15px;
-            justify-content: flex-end;
-        }
-
-        .btn-secondary {
-            background-color: #6d6d6d;
-            color: white;
-            padding: 14px 35px;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5a5a5a;
-        }
-
-        .btn-primary {
-            background-color: #8b9e7d;
-            color: white;
-            padding: 14px 35px;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-primary:hover {
-            background-color: #7a8a6d;
-        }
-
         @media (max-width: 768px) {
             .modal-body {
                 grid-template-columns: 1fr;
@@ -682,21 +488,6 @@
 
             .main-product-image {
                 height: 300px;
-            }
-
-            .quotation-item {
-                grid-template-columns: 60px 1fr;
-                gap: 15px;
-            }
-
-            .quotation-item-quantity,
-            .quotation-item-price {
-                grid-column: 2;
-            }
-
-            .remove-item-btn {
-                grid-column: 2;
-                justify-self: end;
             }
         }
     </style>
@@ -715,10 +506,7 @@
         <div class="header-icons">
             <span>🔍</span>
             <span>👤</span>
-            <span onclick="openQuotationList()">
-                📋
-                <span class="quotation-badge" id="quotationBadge" style="display: none;">0</span>
-            </span>
+            <span>🛒</span>
         </div>
     </header>
 
@@ -730,7 +518,7 @@
         </div>
         <div class="banner-content">
             <h1>Crafted by Nature<br>Made for You</h1>
-            <button class="shop-now-btn">Request Quote</button>
+            <button class="shop-now-btn">Shop Now</button>
         </div>
         <div class="banner-indicators">
             <div class="indicator active" data-slide="0"></div>
@@ -783,7 +571,7 @@
     <!-- Product Detail Modal -->
     <div class="modal-overlay" id="productModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('productModal')">&times;</button>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
             <div class="modal-body">
                 <div class="modal-gallery">
                     <div class="main-product-image" id="modalMainImage">🪑</div>
@@ -806,7 +594,7 @@
                         </div>
                     </div>
 
-                    <button class="add-to-quotation-btn" onclick="addToQuotation()">Add to Quotation</button>
+                    <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
 
                     <div class="product-details-section">
                         <h3 class="details-title">Product Details</h3>
@@ -830,34 +618,13 @@
         </div>
     </div>
 
-    <!-- Quotation List Modal -->
-    <div class="modal-overlay" id="quotationModal">
-        <div class="modal-content" style="max-width: 1000px;">
-            <button class="modal-close" onclick="closeModal('quotationModal')">&times;</button>
-            <div class="quotation-list">
-                <div class="quotation-header">
-                    <h2 class="quotation-title">Quotation Request</h2>
-                </div>
-                
-                <div id="quotationContent">
-                    <div class="empty-quotation">
-                        <div class="empty-quotation-icon">📋</div>
-                        <p>Your quotation list is empty</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <script>
+        // Product data
         const products = {
             monitor: {
                 name: 'Monitor',
                 category: 'Display',
-                price: 280,
-                priceDisplay: '$280',
+                price: '$280',
                 icon: '🪑',
                 material: 'High-quality LCD with LED backlight',
                 dimensions: '24" W × 14" H × 8" D',
@@ -866,8 +633,7 @@
             keyboard: {
                 name: 'Keyboard',
                 category: 'Input Device',
-                price: 1800,
-                priceDisplay: '$1,800',
+                price: '$1,800',
                 icon: '🛏️',
                 material: 'Mechanical switches with premium keycaps',
                 dimensions: '18" W × 6" H × 1.5" D',
@@ -876,8 +642,7 @@
             mouse: {
                 name: 'Mouse',
                 category: 'Input Device',
-                price: 450,
-                priceDisplay: '$450',
+                price: '$450',
                 icon: '🪵',
                 material: 'Ergonomic design with soft-touch coating',
                 dimensions: '5" W × 3" H × 2" D',
@@ -887,8 +652,8 @@
 
         let currentQuantity = 1;
         let currentProduct = null;
-        let quotationList = [];
 
+        // Open modal with product details
         function openModal(productKey) {
             const product = products[productKey];
             currentProduct = productKey;
@@ -896,16 +661,18 @@
             
             document.getElementById('modalMainImage').textContent = product.icon;
             document.getElementById('modalProductName').textContent = product.name;
-            document.getElementById('modalProductPrice').textContent = product.priceDisplay;
+            document.getElementById('modalProductPrice').textContent = product.price;
             document.getElementById('modalMaterial').textContent = product.material;
             document.getElementById('modalDimensions').textContent = product.dimensions;
             document.getElementById('modalFeatures').textContent = product.features;
             
+            // Update thumbnails
             const thumbnails = document.querySelectorAll('.thumbnail');
             thumbnails.forEach(thumb => {
                 thumb.textContent = product.icon;
             });
             
+            // Reset quantity
             currentQuantity = 1;
             document.getElementById('quantityValue').textContent = currentQuantity;
             
@@ -913,12 +680,14 @@
             document.body.style.overflow = 'hidden';
         }
 
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('productModal');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
+        // Quantity controls
         function increaseQuantity() {
             currentQuantity++;
             document.getElementById('quantityValue').textContent = currentQuantity;
@@ -931,236 +700,56 @@
             }
         }
 
-        function addToQuotation() {
+        // Add to cart function
+        function addToCart() {
             const product = products[currentProduct];
-            const existingItem = quotationList.find(item => item.id === currentProduct);
-            
-            if (existingItem) {
-                existingItem.quantity += currentQuantity;
-            } else {
-                quotationList.push({
-                    id: currentProduct,
-                    name: product.name,
-                    category: product.category,
-                    price: product.price,
-                    priceDisplay: product.priceDisplay,
-                    icon: product.icon,
-                    quantity: currentQuantity,
-                    material: product.material,
-                    dimensions: product.dimensions,
-                    features: product.features
-                });
+            alert(`Added ${currentQuantity} × ${product.name} to cart!`);
+            closeModal();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
             }
+        });
+
+        // Banner slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
             
-            updateQuotationBadge();
-            alert(`Added ${currentQuantity} × ${product.name} to quotation list!`);
-            closeModal('productModal');
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
         }
 
-        function updateQuotationBadge() {
-            const badge = document.getElementById('quotationBadge');
-            const totalItems = quotationList.reduce((sum, item) => sum + item.quantity, 0);
-            
-            if (totalItems > 0) {
-                badge.textContent = totalItems;
-                badge.style.display = 'flex';
-            } else {
-                badge.style.display = 'none';
-            }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
         }
 
-        function openQuotationList() {
-            const modal = document.getElementById('quotationModal');
-            const content = document.getElementById('quotationContent');
-            
-            if (quotationList.length === 0) {
-                content.innerHTML = `
-                    <div class="empty-quotation">
-                        <div class="empty-quotation-icon">📋</div>
-                        <p>Your quotation list is empty</p>
-                    </div>
-                `;
-            } else {
-                let itemsHTML = '<div class="quotation-items">';
-                let subtotal = 0;
-                
-                quotationList.forEach((item, index) => {
-                    const total = item.price * item.quantity;
-                    subtotal += total;
-                    itemsHTML += `
-                        <div class="quotation-item">
-                            <div class="quotation-item-image">${item.icon}</div>
-                            <div class="quotation-item-details">
-                                <div class="quotation-item-name">${item.name}</div>
-                                <div class="quotation-item-category">${item.category}</div>
-                            </div>
-                            <div class="quotation-item-quantity">Qty: ${item.quantity}</div>
-                            <div class="quotation-item-price">${total.toLocaleString()}</div>
-                            <button class="remove-item-btn" onclick="removeFromQuotation(${index})">×</button>
-                        </div>
-                    `;
-                });
-                
-                itemsHTML += '</div>';
-                
-                const tax = subtotal * 0.12;
-                const total = subtotal + tax;
-                
-                const summaryHTML = `
-                    <div class="quotation-summary">
-                        <div class="summary-row">
-                            <span class="summary-label">Subtotal</span>
-                            <span class="summary-value">${subtotal.toLocaleString()}</span>
-                        </div>
-                        <div class="summary-row">
-                            <span class="summary-label">Tax (12%)</span>
-                            <span class="summary-value">${tax.toFixed(2)}</span>
-                        </div>
-                        <div class="summary-row">
-                            <span class="summary-label">Total</span>
-                            <span class="summary-value">${total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
-                        </div>
-                    </div>
-                    <div class="quotation-actions">
-                        <button class="btn-secondary" onclick="clearQuotation()">Clear List</button>
-                        <button class="btn-primary" onclick="downloadQuotationPDF()">Download PDF</button>
-                    </div>
-                `;
-                
-                content.innerHTML = itemsHTML + summaryHTML;
-            }
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+        // Auto-advance slides every 4 seconds
+        setInterval(nextSlide, 4000);
 
-        function removeFromQuotation(index) {
-            quotationList.splice(index, 1);
-            updateQuotationBadge();
-            openQuotationList();
-        }
-
-        function clearQuotation() {
-            if (confirm('Are you sure you want to clear the quotation list?')) {
-                quotationList = [];
-                updateQuotationBadge();
-                openQuotationList();
-            }
-        }
-
-        function downloadQuotationPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            
-            // Header
-            doc.setFontSize(24);
-            doc.setFont(undefined, 'bold');
-            doc.text('ROOT & WEAVE', 105, 20, { align: 'center' });
-            
-            doc.setFontSize(10);
-            doc.setFont(undefined, 'normal');
-            doc.text('Crafted by Nature, Made for You', 105, 27, { align: 'center' });
-            
-            // Quotation title
-            doc.setFontSize(18);
-            doc.setFont(undefined, 'bold');
-            doc.text('QUOTATION REQUEST', 20, 45);
-            
-            // Date
-            doc.setFontSize(10);
-            doc.setFont(undefined, 'normal');
-            const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-            doc.text(`Date: ${today}`, 20, 52);
-            
-            // Prepare table data
-            const tableData = quotationList.map(item => [
-                item.name,
-                item.category,
-                item.quantity,
-                item.priceDisplay,
-                `${(item.price * item.quantity).toLocaleString()}`
-            ]);
-            
-            // Add table
-            doc.autoTable({
-                startY: 60,
-                head: [['Product', 'Category', 'Quantity', 'Unit Price', 'Total']],
-                body: tableData,
-                theme: 'striped',
-                headStyles: {
-                    fillColor: [139, 158, 125],
-                    textColor: 255,
-                    fontSize: 10,
-                    fontStyle: 'bold'
-                },
-                bodyStyles: {
-                    fontSize: 9
-                },
-                columnStyles: {
-                    2: { halign: 'center' },
-                    3: { halign: 'right' },
-                    4: { halign: 'right' }
-                }
+        // Indicator click functionality
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
             });
-            
-            // Calculate totals
-            const subtotal = quotationList.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const tax = subtotal * 0.12;
-            const total = subtotal + tax;
-            
-            // Add totals
-            const finalY = doc.lastAutoTable.finalY + 10;
-            doc.setFontSize(10);
-            
-            doc.text('Subtotal:', 130, finalY);
-            doc.text(`${subtotal.toLocaleString()}`, 190, finalY, { align: 'right' });
-            
-            doc.text('Tax (12%):', 130, finalY + 7);
-            doc.text(`${tax.toFixed(2)}`, 190, finalY + 7, { align: 'right' });
-            
-            doc.setFont(undefined, 'bold');
-            doc.setFontSize(12);
-            doc.text('Total:', 130, finalY + 17);
-            doc.text(`${total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`, 190, finalY + 17, { align: 'right' });
-            
-            // Product details section
-            doc.setFont(undefined, 'bold');
-            doc.setFontSize(12);
-            doc.text('PRODUCT DETAILS', 20, finalY + 35);
-            
-            let detailY = finalY + 43;
-            doc.setFont(undefined, 'normal');
-            doc.setFontSize(9);
-            
-            quotationList.forEach((item, index) => {
-                if (detailY > 270) {
-                    doc.addPage();
-                    detailY = 20;
-                }
-                
-                doc.setFont(undefined, 'bold');
-                doc.text(`${index + 1}. ${item.name}`, 20, detailY);
-                doc.setFont(undefined, 'normal');
-                detailY += 5;
-                
-                doc.text(`   Material: ${item.material}`, 20, detailY);
-                detailY += 5;
-                doc.text(`   Dimensions: ${item.dimensions}`, 20, detailY);
-                detailY += 5;
-                doc.text(`   Features: ${item.features}`, 20, detailY);
-                detailY += 8;
+        });
+
+        // Shop Now button functionality
+        document.querySelector('.shop-now-btn').addEventListener('click', () => {
+            document.querySelector('.products-section').scrollIntoView({ 
+                behavior: 'smooth' 
             });
-            
-            // Footer
-            const pageCount = doc.internal.getNumberOfPages();
-            for (let i = 1; i <= pageCount; i++) {
-                doc.setPage(i);
-                doc.setFontSize(8);
-                doc.setFont(undefined, 'normal');
-                doc.text('Thank you for your interest in Root & Weave products.', 105, 285, { align: 'center' });
-                doc.text(`Page ${i} of ${pageCount}`, 105, 290, { align: 'center' });
-            }
-            
-            // Save PDF
-            doc.save(`Quotation_${Date.now()}.pdf`);
-        }
+        });
+    </script>
+</body>
+</html>
